@@ -29,8 +29,6 @@ Hai kiến trúc phải được đánh giá trong cùng điều kiện về ngu
 - LVS: Netgen
 - GDS inspection: KLayout
 
-Không đổi image tag hoặc PDK giữa dự án nếu chưa được cả nhóm thống nhất.
-
 ## Bắt đầu làm việc
 
 Trên Windows, mở Docker Desktop rồi chạy:
@@ -97,9 +95,8 @@ cell-name/
 
 ## Thành viên
 
-- Nhóm trưởng/repository owner: `Kuuhaku-CNK`
-- Collaborator: `ltmhuy`
-- Thành viên thứ ba: sẽ bổ sung sau
+- Nhóm trưởng: `Kuuhaku-CNK`
+- Collaborator: `ltmhuy` `KendySpas`
 
 ## Trạng thái ban đầu
 
