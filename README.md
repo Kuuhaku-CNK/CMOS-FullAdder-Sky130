@@ -65,6 +65,8 @@ git switch -c docs/week-02-review
 
 Không làm trực tiếp trên `main`. Xem [CONTRIBUTING.md](CONTRIBUTING.md) trước khi commit.
 
+Thành viên mới hoặc chưa quen Git phải đọc [Hướng dẫn Git và GitHub cho nhóm](docs/GIT_GITHUB_COLLABORATION_GUIDE.md) và hoàn thành bài thực hành onboarding trước khi sửa schematic/layout.
+
 ## Cấu trúc repository
 
 ```text
