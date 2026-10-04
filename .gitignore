@@ -1,0 +1,46 @@
+# Operating systems and editors
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Python/cache files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Simulation raw/generated outputs
+*.raw
+*.log
+*.out
+*.dump
+*.tr0
+*.sw0
+*.vcd
+
+# Magic/PEX transient and backup files
+*.ext
+*.ext2
+*.nodes
+*.res.ext
+*.sim
+*.mag~
+*.bak
+
+# Tool-local state
+.xschem/
+.magicrc.local
+
+# Generated result directories. Keep README/.gitkeep files.
+**/results/generated/*
+!**/results/generated/.gitkeep
+results/generated/*
+!results/generated/.gitkeep
+
+# Temporary files
+tmp/
+temp/

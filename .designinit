@@ -1,0 +1,15 @@
+# Shared project environment for IIC-OSIC-TOOLS.
+# Usage: source .designinit
+
+export PDK_ROOT="${PDK_ROOT:-/foss/pdks}"
+export PDK="sky130A"
+export PDKPATH="$PDK_ROOT/$PDK"
+export STD_CELL_LIBRARY="sky130_fd_sc_hd"
+export SPICE_USERINIT_DIR="$PDKPATH/libs.tech/ngspice"
+export KLAYOUT_PATH="/headless/.klayout:$PDKPATH/libs.tech/klayout"
+
+if [ -n "${BASH_SOURCE[0]:-}" ]; then
+    export PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+else
+    export PROJECT_ROOT="$(pwd)"
+fi
