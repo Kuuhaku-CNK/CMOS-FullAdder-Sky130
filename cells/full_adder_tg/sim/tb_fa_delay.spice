@@ -1,0 +1,46 @@
+* Full Adder 18T - Post-layout Delay Simulation
+
+.lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.include ../pex/Full_adder_1bit_pex.spice
+
+.temp 27
+
+VPOWER VDD 0 1.8
+
+* Toggle A, B=0, Cin=1
+VA A 0 PULSE(0 1.8 5n 100p 100p 20n 40n)
+VB B 0 0
+VC Cin 0 1.8
+
+XFA 0 VDD A B Abar PbarX PbarM Cin Sum Cout P Full_adder_1bit
+
+CLSUM Sum 0 10f
+CLCOUT Cout 0 10f
+
+.tran 5p 40n 0 5p
+
+* A to SUM
+.meas tran tPHL_SUM TRIG v(A) VAL=0.9 RISE=1
++ TARG v(Sum) VAL=0.9 FALL=1
+
+.meas tran tPLH_SUM TRIG v(A) VAL=0.9 FALL=1
++ TARG v(Sum) VAL=0.9 RISE=1
+
+* A to COUT
+.meas tran tPLH_COUT TRIG v(A) VAL=0.9 RISE=1
++ TARG v(Cout) VAL=0.9 RISE=1
+
+.meas tran tPHL_COUT TRIG v(A) VAL=0.9 FALL=1
++ TARG v(Cout) VAL=0.9 FALL=1
+
+* Average propagation delay
+.meas tran tPD_SUM PARAM='(tPLH_SUM+tPHL_SUM)/2'
+.meas tran tPD_COUT PARAM='(tPLH_COUT+tPHL_COUT)/2'
+
+.control
+run
+write fa_post_delay.raw
+plot v(A)+4 v(Sum)+2 v(Cout)
+.endc
+
+.end

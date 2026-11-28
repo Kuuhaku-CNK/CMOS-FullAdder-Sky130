@@ -1,0 +1,22 @@
+* NGSPICE file created from Full_adder_1bit.ext - technology: sky130A
+
+.subckt Full_adder_1bit 0 VDD A B A' P'_X P'_M Cin Sum Cout P
+X0 B P'_M Cout 0 sky130_fd_pr__nfet_01v8 ad=1.38 pd=5.38 as=0.82 ps=2.82 w=2 l=0.15
+X1 Cout P Cin 0 sky130_fd_pr__nfet_01v8 ad=0.82 pd=2.82 as=1.38 ps=5.38 w=2 l=0.15
+X2 A' A VDD VDD sky130_fd_pr__pfet_01v8 ad=3.375 pd=11.35 as=3.375 ps=11.35 w=5 l=0.15
+X3 B A' P 0 sky130_fd_pr__nfet_01v8 ad=1.38 pd=5.38 as=0.82 ps=2.82 w=2 l=0.15
+X4 B A P VDD sky130_fd_pr__pfet_01v8 ad=3.45 pd=11.38 as=2.05 ps=5.82 w=5 l=0.15
+X5 Cin P Sum VDD sky130_fd_pr__pfet_01v8 ad=3.45 pd=11.38 as=2.05 ps=5.82 w=5 l=0.15
+X6 P B A' 0 sky130_fd_pr__nfet_01v8 ad=0.82 pd=2.82 as=1.38 ps=5.38 w=2 l=0.15
+X7 P B A VDD sky130_fd_pr__pfet_01v8 ad=2.05 pd=5.82 as=3.45 ps=11.38 w=5 l=0.15
+X8 Sum Cin P VDD sky130_fd_pr__pfet_01v8 ad=2.05 pd=5.82 as=3.45 ps=11.38 w=5 l=0.15
+X9 B P Cout VDD sky130_fd_pr__pfet_01v8 ad=3.45 pd=11.38 as=2.05 ps=5.82 w=5 l=0.15
+X10 P'_X P VDD VDD sky130_fd_pr__pfet_01v8 ad=3.375 pd=11.35 as=3.375 ps=11.35 w=5 l=0.15
+X11 P'_X P 0 0 sky130_fd_pr__nfet_01v8 ad=1.35 pd=5.35 as=1.35 ps=5.35 w=2 l=0.15
+X12 Cout P'_M Cin VDD sky130_fd_pr__pfet_01v8 ad=2.05 pd=5.82 as=3.45 ps=11.38 w=5 l=0.15
+X13 A' A 0 0 sky130_fd_pr__nfet_01v8 ad=1.35 pd=5.35 as=1.35 ps=5.35 w=2 l=0.15
+X14 Cin P'_X Sum 0 sky130_fd_pr__nfet_01v8 ad=1.38 pd=5.38 as=0.82 ps=2.82 w=2 l=0.15
+X15 P'_M P VDD VDD sky130_fd_pr__pfet_01v8 ad=3.375 pd=11.35 as=3.375 ps=11.35 w=5 l=0.15
+X16 P'_M P 0 0 sky130_fd_pr__nfet_01v8 ad=1.35 pd=5.35 as=1.35 ps=5.35 w=2 l=0.15
+X17 Sum Cin P'_X 0 sky130_fd_pr__nfet_01v8 ad=0.82 pd=2.82 as=1.38 ps=5.38 w=2 l=0.15
+.ends

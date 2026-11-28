@@ -1,0 +1,51 @@
+* Full Adder 18T - Post-layout Functional Simulation
+
+.lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.include ../pex/Full_adder_1bit_pex.spice
+
+.temp 27
+
+VPOWER VDD 0 1.8
+
+VA A 0 PULSE(0 1.8 40n 100p 100p 39.9n 80n)
+VB B 0 PULSE(0 1.8 20n 100p 100p 19.9n 40n)
+VC Cin 0 PULSE(0 1.8 10n 100p 100p 9.9n 20n)
+
+XFA 0 VDD A B Abar PbarX PbarM Cin Sum Cout P Full_adder_1bit
+
+CLSUM Sum 0 10f
+CLCOUT Cout 0 10f
+
+.tran 10p 80n 0 10p
+
+.meas tran Sum000 FIND v(Sum) AT=5n
+.meas tran Cout000 FIND v(Cout) AT=5n
+
+.meas tran Sum001 FIND v(Sum) AT=15n
+.meas tran Cout001 FIND v(Cout) AT=15n
+
+.meas tran Sum010 FIND v(Sum) AT=25n
+.meas tran Cout010 FIND v(Cout) AT=25n
+
+.meas tran Sum011 FIND v(Sum) AT=35n
+.meas tran Cout011 FIND v(Cout) AT=35n
+
+.meas tran Sum100 FIND v(Sum) AT=45n
+.meas tran Cout100 FIND v(Cout) AT=45n
+
+.meas tran Sum101 FIND v(Sum) AT=55n
+.meas tran Cout101 FIND v(Cout) AT=55n
+
+.meas tran Sum110 FIND v(Sum) AT=65n
+.meas tran Cout110 FIND v(Cout) AT=65n
+
+.meas tran Sum111 FIND v(Sum) AT=75n
+.meas tran Cout111 FIND v(Cout) AT=75n
+
+.control
+run
+write fa_post_function.raw
+plot v(A)+8 v(B)+6 v(Cin)+4 v(Sum)+2 v(Cout)
+.endc
+
+.end

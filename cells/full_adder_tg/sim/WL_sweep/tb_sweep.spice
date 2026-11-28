@@ -1,0 +1,36 @@
+* Full Adder WL Sweep
+
+.lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+.param WP=8.0
+.param WN=2.0
+
+.include fa_sweep.spice
+
+.temp 27
+
+VPOWER VDD 0 1.8
+XFA B A Sum Cin Cout Full_adder_1bit
+
+CLSUM Sum 0 10f
+CLCOUT Cout 0 10f
+
+VA A 0 0
+VB B 0 1.8
+VC Cin 0 PULSE(0 1.8 5n 100p 100p 20n 40n)
+
+.control
+
+tran 5p 40n 0 5p
+
+meas tran sphl TRIG v(Cin) VAL=0.9 RISE=1 TARG v(Sum) VAL=0.9 TD=5n FALL=LAST
+
+meas tran splh TRIG v(Cin) VAL=0.9 FALL=1 TARG v(Sum) VAL=0.9 TD=25n RISE=LAST
+
+meas tran cplh TRIG v(Cin) VAL=0.9 RISE=1 TARG v(Cout) VAL=0.9 TD=5n RISE=LAST
+
+meas tran cphl TRIG v(Cin) VAL=0.9 FALL=1 TARG v(Cout) VAL=0.9 TD=25n FALL=LAST
+
+quit
+.endc
+.end
