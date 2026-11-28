@@ -1,0 +1,60 @@
+* Extracted by KLayout with SKY130 LVS runset on : 28/11/2026 12:31
+
+* cell Full_adder_1bit
+* pin sky130_gnd
+.SUBCKT Full_adder_1bit sky130_gnd
+* device instance $1 r0 *1 27.495,-6.555 sky130_fd_pr__pfet_01v8
+XM$1 \$13 \$9 \$10 \$14 sky130_fd_pr__pfet_01v8 L=150000 W=5000000 AS=3.45e+12
++ AD=2.05e+12 PS=11380000 PD=5820000
+* device instance $2 r0 *1 28.465,-6.555 sky130_fd_pr__pfet_01v8
+XM$2 \$10 \$6 \$12 \$14 sky130_fd_pr__pfet_01v8 L=150000 W=5000000 AS=2.05e+12
++ AD=3.45e+12 PS=5820000 PD=11380000
+* device instance $3 r0 *1 18.58,-6.56 sky130_fd_pr__pfet_01v8
+XM$3 \$14 \$6 \$7 \$14 sky130_fd_pr__pfet_01v8 L=150000 W=5000000 AS=3.375e+12
++ AD=3.375e+12 PS=11350000 PD=11350000
+* device instance $4 r0 *1 14.295,-6.555 sky130_fd_pr__pfet_01v8
+XM$4 \$11 \$12 \$6 \$14 sky130_fd_pr__pfet_01v8 L=150000 W=5000000 AS=3.45e+12
++ AD=2.05e+12 PS=11380000 PD=5820000
+* device instance $5 r0 *1 15.265,-6.555 sky130_fd_pr__pfet_01v8
+XM$5 \$6 \$11 \$12 \$14 sky130_fd_pr__pfet_01v8 L=150000 W=5000000 AS=2.05e+12
++ AD=3.45e+12 PS=5820000 PD=11380000
+* device instance $6 r0 *1 20.895,-6.555 sky130_fd_pr__pfet_01v8
+XM$6 \$6 \$13 \$8 \$14 sky130_fd_pr__pfet_01v8 L=150000 W=5000000 AS=3.45e+12
++ AD=2.05e+12 PS=11380000 PD=5820000
+* device instance $7 r0 *1 21.865,-6.555 sky130_fd_pr__pfet_01v8
+XM$7 \$8 \$6 \$13 \$14 sky130_fd_pr__pfet_01v8 L=150000 W=5000000 AS=2.05e+12
++ AD=3.45e+12 PS=5820000 PD=11380000
+* device instance $8 r0 *1 11.98,-6.56 sky130_fd_pr__pfet_01v8
+XM$8 \$14 \$11 \$5 \$14 sky130_fd_pr__pfet_01v8 L=150000 W=5000000 AS=3.375e+12
++ AD=3.375e+12 PS=11350000 PD=11350000
+* device instance $9 r0 *1 25.18,-6.56 sky130_fd_pr__pfet_01v8
+XM$9 \$14 \$6 \$9 \$14 sky130_fd_pr__pfet_01v8 L=150000 W=5000000 AS=3.375e+12
++ AD=3.375e+12 PS=11350000 PD=11350000
+* device instance $10 r0 *1 20.9,-21.06 sky130_fd_pr__nfet_01v8
+XM$10 \$7 \$13 \$8 sky130_gnd sky130_fd_pr__nfet_01v8 L=150000 W=2000000
++ AS=1.38e+12 AD=820000000000 PS=5380000 PD=2820000
+* device instance $11 r0 *1 21.87,-21.06 sky130_fd_pr__nfet_01v8
+XM$11 \$8 \$7 \$13 sky130_gnd sky130_fd_pr__nfet_01v8 L=150000 W=2000000
++ AS=820000000000 AD=1.38e+12 PS=2820000 PD=5380000
+* device instance $12 r0 *1 25.185,-21.06 sky130_fd_pr__nfet_01v8
+XM$12 sky130_gnd \$6 \$9 sky130_gnd sky130_fd_pr__nfet_01v8 L=150000 W=2000000
++ AS=1.35e+12 AD=1.35e+12 PS=5350000 PD=5350000
+* device instance $13 r0 *1 18.585,-21.06 sky130_fd_pr__nfet_01v8
+XM$13 sky130_gnd \$6 \$7 sky130_gnd sky130_fd_pr__nfet_01v8 L=150000 W=2000000
++ AS=1.35e+12 AD=1.35e+12 PS=5350000 PD=5350000
+* device instance $14 r0 *1 14.29,-21.06 sky130_fd_pr__nfet_01v8
+XM$14 \$5 \$12 \$6 sky130_gnd sky130_fd_pr__nfet_01v8 L=150000 W=2000000
++ AS=1.38e+12 AD=820000000000 PS=5380000 PD=2820000
+* device instance $15 r0 *1 15.26,-21.06 sky130_fd_pr__nfet_01v8
+XM$15 \$6 \$5 \$12 sky130_gnd sky130_fd_pr__nfet_01v8 L=150000 W=2000000
++ AS=820000000000 AD=1.38e+12 PS=2820000 PD=5380000
+* device instance $16 r0 *1 27.5,-21.06 sky130_fd_pr__nfet_01v8
+XM$16 \$13 \$6 \$10 sky130_gnd sky130_fd_pr__nfet_01v8 L=150000 W=2000000
++ AS=1.38e+12 AD=820000000000 PS=5380000 PD=2820000
+* device instance $17 r0 *1 28.47,-21.06 sky130_fd_pr__nfet_01v8
+XM$17 \$10 \$9 \$12 sky130_gnd sky130_fd_pr__nfet_01v8 L=150000 W=2000000
++ AS=820000000000 AD=1.38e+12 PS=2820000 PD=5380000
+* device instance $18 r0 *1 11.975,-21.06 sky130_fd_pr__nfet_01v8
+XM$18 sky130_gnd \$11 \$5 sky130_gnd sky130_fd_pr__nfet_01v8 L=150000 W=2000000
++ AS=1.35e+12 AD=1.35e+12 PS=5350000 PD=5350000
+.ENDS Full_adder_1bit

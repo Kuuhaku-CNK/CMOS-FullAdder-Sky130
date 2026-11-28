@@ -1,0 +1,45 @@
+** sch_path: /foss/designs/fa_tg_1bit/xschem/Full_adder_1bit.sch
+.subckt Full_adder_1bit B A Sum Cin Cout
+*.PININFO B:I A:I Cin:I Sum:O Cout:O
+x1 A B P xor2_design_khaosat
+x2 P Cin Sum xor2_design_khaosat
+x3 Cin Cout P B mux_2to1_design
+.ends
+
+* expanding   symbol:  /foss/designs/fa_tg_1bit/xschem/xor2_design_khaosat.sym # of pins=3
+** sym_path: /foss/designs/fa_tg_1bit/xschem/xor2_design_khaosat.sym
+** sch_path: /foss/designs/fa_tg_1bit/xschem/xor2_design_khaosat.sch
+.subckt xor2_design_khaosat B A Y
+*.PININFO Y:O B:I A:I
+XPmos_inv_1 net1 B VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W={WP} nf=1
+XNmos_inv_1 net1 B 0 0 sky130_fd_pr__nfet_01v8 L=0.15 W={WN} nf=1
+XPmos_xor_1 Y B A VDD sky130_fd_pr__pfet_01v8 L=0.15 W={WP} nf=1
+XNmos_xor_1 Y net1 A 0 sky130_fd_pr__nfet_01v8 L=0.15 W={WN} nf=1
+XPmos_xor_2 Y A B VDD sky130_fd_pr__pfet_01v8 L=0.15 W={WP} nf=1
+XNmos_xor_2 Y A net1 0 sky130_fd_pr__nfet_01v8 L=0.15 W={WN} nf=1
+.ends
+
+
+* expanding   symbol:  /foss/designs/fa_tg_1bit/xschem/mux_2to1_design.sym # of pins=4
+** sym_path: /foss/designs/fa_tg_1bit/xschem/mux_2to1_design.sym
+** sch_path: /foss/designs/fa_tg_1bit/xschem/mux_2to1_design.sch
+.subckt mux_2to1_design Int_1 Y S Int_0
+*.PININFO Int_1:I Int_0:I Y:O S:I
+XNmos_1 Y S Int_1 0 sky130_fd_pr__nfet_01v8 L=0.15 W={WN} nf=1
+XPmos_1 Y net1 Int_1 VDD sky130_fd_pr__pfet_01v8 L=0.15 W={WP} nf=1
+XNmos_2 Y net1 Int_0 0 sky130_fd_pr__nfet_01v8 L=0.15 W={WN} nf=1
+XPmos_2 Y S Int_0 VDD sky130_fd_pr__pfet_01v8 L=0.15 W={WP} nf=1
+x1 net1 S inveter_design
+.ends
+
+
+* expanding   symbol:  /foss/designs/fa_tg_1bit/xschem/inveter_design.sym # of pins=2
+** sym_path: /foss/designs/fa_tg_1bit/xschem/inveter_design.sym
+** sch_path: /foss/designs/fa_tg_1bit/xschem/inveter_design.sch
+.subckt inveter_design Out In
+*.PININFO In:I Out:O
+XNMOS Out In 0 0 sky130_fd_pr__nfet_01v8 L=0.15 W={WN} nf=1
+XPMOS Out In VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W={WP} nf=1
+.ends
+
+.GLOBAL VDD

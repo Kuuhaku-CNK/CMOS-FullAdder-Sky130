@@ -1,0 +1,23 @@
+* Full Adder detailed delay sweep
+.lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.param WP=8.0
+.param WN=2.0
+.include fa_sweep.spice
+.temp 27
+
+VPOWER VDD 0 1.8
+XFA B A Sum Cin Cout Full_adder_1bit
+CLSUM Sum 0 10f
+CLCOUT Cout 0 10f
+V_A A 0 1.8
+V_B B 0 1.8
+V_Cin Cin 0 PULSE(0 1.8 5n 100p 100p 20n 40n)
+
+.control
+tran 5p 40n 0 5p
+set wr_singlescale
+set wr_vecnames
+wrdata sweep_wave.dat v(A) v(B) v(Cin) v(Sum) v(Cout)
+quit
+.endc
+.end
